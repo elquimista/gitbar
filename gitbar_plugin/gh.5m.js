@@ -2,13 +2,13 @@
 
 /*
 # <bitbar.title>GitBar</bitbar.title>
-# <bitbar.version>v1.4</bitbar.version>
-# <bitbar.author>Dan Cadden</bitbar.author>
-# <bitbar.author.github>shikkic</bitbar.author.github>
-# <bitbar.desc>Quick check your Github stats</bitbar.desc>
+# <bitbar.version>v1.0.0</bitbar.version>
+# <bitbar.author>darkturtle</bitbar.author>
+# <bitbar.author.github>clthck</bitbar.author.github>
+# <bitbar.desc>Quickly check your GitHub stats</bitbar.desc>
 # <bitbar.image>http://www.hosted-somewhere/pluginimage</bitbar.image>
-# <bitbar.dependencies>node, gh-scrape</bitbar.dependencies>
-# <bitbar.abouturl>https:/github.com/shikkic</bitbar.abouturl>
+# <bitbar.dependencies>node,github-contrib-stats</bitbar.dependencies>
+# <bitbar.abouturl>https:/github.com/clthck/gitbar</bitbar.abouturl>
 */
 
 // Import User Setting
