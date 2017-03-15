@@ -7,7 +7,7 @@
 # <bitbar.author.github>clthck</bitbar.author.github>
 # <bitbar.desc>Quickly check your GitHub stats</bitbar.desc>
 # <bitbar.image>http://www.hosted-somewhere/pluginimage</bitbar.image>
-# <bitbar.dependencies>node,github-contrib-stats</bitbar.dependencies>
+# <bitbar.dependencies>node,github-contrib-stats,dotenv</bitbar.dependencies>
 # <bitbar.abouturl>https:/github.com/clthck/gitbar</bitbar.abouturl>
 */
 
