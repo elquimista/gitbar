@@ -6,7 +6,7 @@
 # <bitbar.author>darkturtle</bitbar.author>
 # <bitbar.author.github>clthck</bitbar.author.github>
 # <bitbar.desc>Quickly check your GitHub stats</bitbar.desc>
-# <bitbar.image>http://www.hosted-somewhere/pluginimage</bitbar.image>
+# <bitbar.image>https://raw.githubusercontent.com/clthck/gitbar/master/Screenshot.png</bitbar.image>
 # <bitbar.dependencies>node,github-contrib-stats,dotenv</bitbar.dependencies>
 # <bitbar.abouturl>https:/github.com/clthck/gitbar</bitbar.abouturl>
 */
