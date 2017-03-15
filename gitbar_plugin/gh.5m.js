@@ -1,4 +1,4 @@
-#!/usr/bin/env /Users/clthck/.nvm/versions/node/v7.7.0/bin/node
+#!/usr/local/bin/node
 
 /*
 # <bitbar.title>GitBar</bitbar.title>
@@ -41,6 +41,8 @@ const redText = "| color=red size=14",
 var gh = require('gh-scrape'),
          visibleEmoji;
 
+const getGhContribStats = require('github-contrib-stats');
+
 // Check to Make Sure User Set Default Configs
 if (userUrl === "http://github.com/<YOUR_GITHUB_NAME_HERE>") {
     console.log(brokenHeartEmoji, "Please Set the Default Configs", brokenHeartEmoji);
@@ -48,31 +50,30 @@ if (userUrl === "http://github.com/<YOUR_GITHUB_NAME_HERE>") {
 }
 
 // Scrape Github Stats for <userUrl>
-gh.scrapeContributionDataAndStats(userUrl, function(data) {
+// gh.scrapeContributionDataAndStats(userUrl, function(data) {
+getGhContribStats(username)
+.then(function(data) {
     // Validate Request Data Exists
     if (data) {
         // Retrive Request Data
-        var commitsToday = data.commitsToday || 0,
-            currentStreak = data.statsData.currentStreak || 0,
-            longestStreak = data.statsData.longestStreak || 0,
-            totalContributions = data.statsData.totalContributions || 0;
+        const { totalContributions, todaysContributions, currentStreak, longestStreak }  = data.contributionStats;
 
         // Set Text Color Variables
-        var contributionsTodayColor = commitsToday ? normalText : redText,
+        var contributionsTodayColor = todaysContributions ? normalText : redText,
             currentStreakColor = currentStreak ? normalText : redText,
             totalContributionsColor = totalContributions ? normalText : redText;
 
         // Set Displayed Emoji
-        var visibleEmoji = data.commitsToday ? heartEmoji : brokenHeartEmoji;
+        var visibleEmoji = totalContributions ? heartEmoji : brokenHeartEmoji;
 
         // Log Output To Bitbar
         if (compactUI == 'true') {
-            console.log(visibleEmoji + " " + commitsToday + contributionsTodayColor);
+            console.log(visibleEmoji + " " + todaysContributions + contributionsTodayColor);
             console.log("---");
             console.log("Contributions");
-            console.log("Today: ", commitsToday, contributionsTodayColor);
+            console.log("Today: ", todaysContributions, contributionsTodayColor);
         } else {
-            console.log(visibleEmoji, " Contributions Today: ", commitsToday, visibleEmoji, contributionsTodayColor);
+            console.log(visibleEmoji, " Contributions Today: ", todaysContributions, visibleEmoji, contributionsTodayColor);
             console.log("---");
         }
         console.log("Total: ", totalContributions, totalContributionsColor);
